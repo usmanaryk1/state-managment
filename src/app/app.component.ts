@@ -17,5 +17,5 @@ export class AppComponent {
     this.store.set('todos', [{id:1, name:'usman'},{id:2, name:'adnan'}])
     this.todos$.subscribe(ok=> console.log(ok))
   }
-  //3ersubbranch
+  //4ersubbranch
 }

@@ -12,7 +12,7 @@ export class AppComponent {
   todos$ = this.store.select<any[]>('todos');
   
   constructor(private store:Store){
-    // console.log(this.store);
+    console.log(this.store);
     //1-here we are populating the initializing date
     this.store.set('todos', [{id:1, name:'usman'},{id:2, name:'adnan'}])
     this.todos$.subscribe(ok=> console.log(ok))

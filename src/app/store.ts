@@ -38,7 +38,7 @@ get value(){
 }
 
 //ask for particularly property from store //how to get value now store.select<Todo[]>('todos'); // this will return an observable 
-select<T>(name:string):Observable<any>{
+select<T>(name:string):Observable<any[]>{
     // return this.store.pluck(name);//pluk('name') not work without .pipe(pluck('name'))
     return this.store.pipe(pluck(name));//pluck=>fetch only one property from our store
 }

@@ -8,9 +8,10 @@ import { SongsService } from '../../services/songs.service';
  selector:'songs-listened',
  template:`
  <div class="songs">
- 
+
     <songs-list
-    [list]="listened" >
+    [list]="listened"
+    (toggle)="onToggle($event)" >
     Played<!--content projection means pass data to show in ng-content-->
     </songs-list>
 
@@ -37,5 +38,7 @@ export class SongsListenedComponent implements OnInit{
 
         
     }
-
+    onToggle(event){
+        this.songsService.toggle(event);//we are going to change it from service so store will update auto
+    }
 }

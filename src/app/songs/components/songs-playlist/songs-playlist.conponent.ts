@@ -9,7 +9,9 @@ import { SongsService } from '../../services/songs.service';
  <div class="songs">
 
     <songs-list
-    [list]="playlist$ | async" >
+    [list]="playlist$ | async" 
+    (toggle)="onToggle($event)"
+    >
     Playlist<!--content projection means pass data to show in ng-content-->
     </songs-list>
     
@@ -33,6 +35,10 @@ export class SongsPlaylistComponent implements OnInit, OnDestroy{
         this.subscription=this.songsService.getPlayList$.subscribe();
 
         
+    }
+
+    onToggle(event){
+        this.songsService.toggle(event);//we are going to change it from service so store will update auto
     }
     ngOnDestroy() {
         this.subscription.unsubscribe();

@@ -13,10 +13,12 @@ import { Song } from "../../services/songs.service";
             <li *ngFor="let item of list">
                 <p>{{item.artist}}</p>
                 <span>{{item.track}}</span>
+                
                 <div 
                  class="songs-list__favourite"
                  [class.active]="item.favourite">
                 </div>
+
                 <div 
                  class="songs-list__listened"
                  [class.active]="item.listened">

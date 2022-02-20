@@ -5,6 +5,9 @@ import { Store } from './store';
 import { AppComponent } from './app.component';
 import { SongsModule } from './songs/songs.module';
 
+export const api= "http://localhost:3000";
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +17,8 @@ import { SongsModule } from './songs/songs.module';
     SongsModule
   ],
   providers: [
-    Store
+    Store,
+    {provide:'BaseURL', useValue:api }
   ],
   bootstrap: [AppComponent]
 })
